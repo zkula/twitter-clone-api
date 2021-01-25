@@ -20,9 +20,10 @@ app.get("/tweets", (req, res) => {
   console.log(req.query);
   const query = req.query.q;
   const count = req.query.count;
+  const maxId = req.query.max_id;
 
   twitter
-    .get(query, count)
+    .get(query, count, maxId)
     .then((response) => {
       res.status(200).send(response.data);
     })

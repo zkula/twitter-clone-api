@@ -3,11 +3,12 @@ const axios = require("axios");
 const URL = "https://api.twitter.com/1.1/search/tweets.json";
 
 class Twitter {
-  get(q, count) {
+  get(q, count, maxId) {
     return axios.get(URL, {
       params: {
         q: q,
         count: count,
+        max_id: maxId,
         tweet_mode: "extended",
         include_entities: true,
       },

@@ -8,6 +8,8 @@ class Twitter {
       params: {
         q: q,
         count: count,
+        tweet_mode: "extended",
+        include_entities: true,
       },
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
